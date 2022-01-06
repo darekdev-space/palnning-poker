@@ -4,7 +4,10 @@
         "es6": true
     },
     "parser": "@typescript-eslint/parser",
-    "extends": ["airbnb", "eslint:recommended"],
+    "extends": ["airbnb-typescript/base", "eslint:recommended"],
+    "parserOptions": {
+        "project": "./tsconfig.json"
+    },
     "settings": {
         "import/resolver": {
             "node": {
@@ -12,27 +15,26 @@
             }
         }
     },
+    "plugins": ["import"],
     "rules": {
-        "import/extensions": "off",
-        "indent": ["warn", 4, {"SwitchCase": 1}],
-        "comma-style": ["error", "last"],
+        "@typescript-eslint/indent": ["error", 4, {"SwitchCase": 1}],
         "max-len": [2, 120, 4, {"ignoreUrls": true}],
         "array-bracket-spacing": ["error", "never"],
         "linebreak-style": 0,
         "array-callback-return": "error",
         "class-methods-use-this": "off",
-        "comma-spacing": [
+        "@typescript-eslint/comma-spacing": [
             "error",
             {
                 "after": true,
                 "before": false
             }
         ],
-        "object-curly-spacing": ["error", "never"],
+        "@typescript-eslint/object-curly-spacing": ["error", "never"],
         "object-curly-newline": "error",
-        "comma-dangle": "off",
-        "brace-style": ["error", "1tbs"],
-        "arrow-body-style": "off",
+        "@typescript-eslint/comma-dangle": "off",
+        "@typescript-eslint/brace-style": ["error", "1tbs"],
+        "@typescript-eslint/arrow-body-style": "off",
         "arrow-parens": ["error", "as-needed", {"requireForBlockBody": true}],
         "arrow-spacing": [
             "error",

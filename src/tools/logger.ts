@@ -1,5 +1,5 @@
 import winston from 'winston';
-import {TIMESTAMP_FORMAT} from '../constans';
+import {TIMESTAMP_FORMAT} from '../constants';
 
 const logger = winston.createLogger({
     format: winston.format.combine(
@@ -7,7 +7,7 @@ const logger = winston.createLogger({
         winston.format.colorize(),
         winston.format.simple()
     ),
-    transports: [new winston.transports.Console()],
+    transports: [new winston.transports.Console()]
 });
 
 export default logger;
